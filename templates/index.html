@@ -13,13 +13,24 @@
             {{ menu }}
         </div>
         <div class="content">
-            <div class="accordion">
-                {% for submenu in records[menu] %}
-                    <div class="title">
-                        <i class="dropdown icon"></i>
-                        {{ submenu }}
-                    </div>
+            {% for submenu in records[menu] %}
+                {% if submenu != None %}
+                    <div class="accordion">
 
+                        <div class="title">
+                            <i class="dropdown icon"></i>
+                            {{ submenu }}
+                        </div>
+
+                        <div class="content">
+                            {% for data in records[menu][submenu] %}
+                                <div class="content">
+                                    <a href="{{ data['url'] }}">{{ data['action'] }}</a>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% else %}
                     <div class="content">
                         {% for data in records[menu][submenu] %}
                             <div class="content">
@@ -27,8 +38,8 @@
                             </div>
                         {% endfor %}
                     </div>
-                {% endfor %}
-            </div>
+                {% endif %}
+            {% endfor %}
         </div>
     {% endfor %}
 </div>

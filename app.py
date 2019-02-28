@@ -8,7 +8,6 @@ app = Flask(__name__)
 @app.route('/')
 def hello_world():
     records = get_airtable_data()
-    print(jsonify(records))
     return render_template('index.html', records=records)
 
 
