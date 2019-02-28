@@ -9,4 +9,4 @@ To run the app:
     Command: pip install -r requirements.txt
 
  - Run Flask Server:
-    Command: Flask run
+    Command: flask run
