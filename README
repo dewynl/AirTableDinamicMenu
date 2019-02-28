@@ -1,0 +1,12 @@
+To run the app:
+ - Create virtual enviroment with virtualenv:
+    Command: virtualenv --python=python3 venv
+
+ - Activate Virtual Enviroment:
+    Command: source venv/bin/activate
+
+ - Install requirements using pip:
+    Command: pip install -r requirements.txt
+
+ - Run Flask Server:
+    Command: Flask run

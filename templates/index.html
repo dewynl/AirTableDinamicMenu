@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+    <title>Dinamic Menu</title>
+</head>
+<body>
+{{ data }}
+<ul>
+    {% for menu in records %}
+        <li>{{ menu }}</li>
+        <ul>
+            {% for submenu in records[menu] %}
+                {% if submenu != None %}<li>{{ submenu }}</li>{% endif %}
+                <ul>
+                    {% for data in records[menu][submenu] %}
+                        <li><a href="{{ data['url'] }}">{{ data['action'] }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+</ul>
+</body>
+</html>
