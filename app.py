@@ -1,5 +1,4 @@
 from flask import Flask, render_template
-from flask import jsonify
 from AirTableClient import get_airtable_data
 
 app = Flask(__name__)
