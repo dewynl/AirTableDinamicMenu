@@ -1,4 +1,6 @@
 from flask import Flask, render_template
+from flask import jsonify
+
 from AirTableClient import get_airtable_data
 
 app = Flask(__name__)
@@ -8,6 +10,12 @@ app = Flask(__name__)
 def hello_world():
     records = get_airtable_data()
     return render_template('index.html', records=records)
+
+
+@app.route('/api/')
+def api():
+    records = get_airtable_data()
+    return jsonify(records)
 
 
 if __name__ == '__main__':
