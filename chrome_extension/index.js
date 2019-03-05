@@ -22,6 +22,9 @@ $(document).ready(function(){
       html += '</div>';
       $("#menu").append(html);
     }
+  },
+  error: function(data){
+    $("#menu").append("There are no records.");
   }
 });
 })
