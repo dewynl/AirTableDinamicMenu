@@ -10,3 +10,7 @@ To run the app:
 
  - Run Flask Server:
     Command: flask run
+    
+To add Google Chrome extension:
+ - Add the "chrome_extension" folder to extensions library with the "Load Unpacked Option".
+ - With the FLask App running, click the extension icon and wait for the response.
